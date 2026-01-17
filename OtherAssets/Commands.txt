@@ -1,0 +1,19 @@
+﻿publish blazor
+
+dotnet publish -c Release -o out
+
+Build StaticHost
+
+dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o out
+
+
+might need
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Bind to Nomad dynamic port
+var port = Environment.GetEnvironmentVariable("NOMAD_PORT_http") ?? "5000";
+builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
+
+var app = builder.Build();
+

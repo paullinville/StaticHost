@@ -17,12 +17,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- Required for static file hosting -->
-    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <Compile Include="OtherAssets\Commands.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="OtherAssets\" />
+    <!-- Required for static file hosting -->
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
 </Project>
